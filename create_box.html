@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <tittle> Curso javascript</tittle>
+    </head>
+    <body>
+        <div id = "app">
+            <div class = "box"></div>
+        </div>
+        
+        <script>
+            var btnElement = document.createElement('button');
+            var textElement = document.createTextNode('Adicionar quadrado');
+            btnElement.appendChild(textElement);
+            
+            var finder = document.querySelector('#app');
+            finder.appendChild(btnElement);
+            var box = 0;
+            btnElement.onclick = function(){
+                var newB = document.createElement('div');
+                newB.setAttribute('class', 'box' + box);
+                var temp = document.querySelector('#app');
+                temp.appendChild(newB);
+                var boxElement = document.querySelector('.' + 'box' + box);
+                boxElement.style.position = 'relative';
+                boxElement.style.width = 100;
+                boxElement.style.height = 100;
+                boxElement.style.backgroundColor = '#f00';
+              
+                box +=1;
+               
+               
+            };
+
+        </script>
+    </body>
+
+</html>
