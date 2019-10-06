@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <tittle> Curso javascript</tittle>
+    </head>
+    <body>
+        <div id = "app">
+            
+        </div>
+        
+        <script>
+            var btnElement = document.createElement('button');
+            var textElement = document.createTextNode('Adicionar quadrado');
+            btnElement.appendChild(textElement);
+            
+            var finder = document.querySelector('#app');
+            finder.appendChild(btnElement);
+            var box = 0;
+            btnElement.onclick = function(){
+                var newB = document.createElement('div');
+                newB.setAttribute('class', 'box' + box);
+                newB.setAttribute('onmouseenter', 'style.backgroundColor = getRandomColor()');
+                var temp = document.querySelector('#app');
+                temp.appendChild(newB);
+                var boxElement = document.querySelector('.' + 'box' + box);
+                boxElement.style.position = 'relative';
+                boxElement.style.width = 100;
+                boxElement.style.height = 100;
+                boxElement.style.backgroundColor = '#f00';
+              
+                box +=1;
+                
+               
+            };
+            
+            function getRandomColor() {
+            
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                    }
+                return color;
+            }
+            var newColor = getRandomColor(); // #E943F0
+
+            
+            
+
+        </script>
+    </body>
+
+</html>
