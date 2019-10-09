@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <tittle> Curso javascript</tittle>
+    </head>
+    <body>
+        <div id = "app">
+            
+        </div>
+        
+        <script>
+            var nome = ["Biridin", "Heehee", "Ayuonki"];
+            var ul = document.createElement('ul');
+            var Element = document.querySelector("#app");
+
+            
+            var inptElement = document.createElement('input');
+            var btnElement = document.createElement('button');
+            btnElement.setAttribute('onClick', 'add()');
+            var btnTxt = document.createTextNode('Adicionar');
+            btnElement.appendChild(btnTxt);
+            Element.appendChild(inptElement);
+            Element.appendChild(btnElement);
+            
+            for(const x in nome){
+                let tmp = document.createElement('li');
+                let txt = document.createTextNode(nome[x]);
+                tmp.appendChild(txt);
+                ul.appendChild(tmp);
+            };
+            
+            Element.appendChild(ul);
+
+            function add(){
+                let inpt = inptElement.value;
+                let tmp = document.createElement('li');
+                let txt = document.createTextNode(inpt);
+                
+                tmp.appendChild(txt);
+                ul.appendChild(tmp);
+                inptElement.value = "";
+               
+                
+                 
+            };
+            
+
+            
+            
+        </script>
+    </body>
+
+</html>
